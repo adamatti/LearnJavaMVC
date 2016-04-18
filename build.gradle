@@ -1,0 +1,32 @@
+apply plugin:"java"
+apply plugin:"idea"
+apply plugin:"eclipse"
+apply plugin:"jacoco"
+apply plugin:"application"
+
+mainClassName = "adamatti.Main"
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+    compile 'org.springframework.boot:spring-boot-starter-web:1.3.3.RELEASE'
+    compile("org.springframework.boot:spring-boot-starter-jetty:1.3.3.RELEASE")
+    testCompile 'junit:junit:4.12'
+}
+
+idea {
+    module {
+        downloadJavadoc = false
+        downloadSources = false
+    }
+}
+
+eclipse {
+    classpath {
+        downloadSources=false
+    }
+}
+
+jacocoTestReport.dependsOn "test"
