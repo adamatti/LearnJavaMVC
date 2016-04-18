@@ -15,6 +15,7 @@ public class Main {
 
     public static void main(String[] args) {
         ApplicationContext ctx = SpringApplication.run(Main.class, args);
+
         addFakeData(ctx);
     }
 
